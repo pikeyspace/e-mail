@@ -56,6 +56,9 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
 }
+.block-inner + .block-inner {
+    border-left: 1px solid #000;
+}
 .block-seсtion {
     width: 100%;
 }
@@ -65,9 +68,6 @@ section {
     padding: 20px 16px;
     text-transform: uppercase;
     height: 30px;
-}
-.block-seсtion__content {
-    padding: 15px 16px;           
 }
 .block-section__uptitle {
     background-color: rgba(2, 94, 184, 0.3);
@@ -100,10 +100,9 @@ section {
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 29px;
 }
-.grid-columns-12 {
+#flows {
     display: grid;
     grid-template-columns: 4fr 3fr 3fr;
-
 }
 .grid-columns-6 {
     display: grid;
@@ -124,6 +123,10 @@ section {
     line-height: 1.43;
     letter-spacing: 0.25px;
     margin-bottom: 15px;
+    padding: 15px 16px;
+}
+.content-text + .content-text {
+    border-top: 1px solid #000;
 }
 .small-block {
     background-color: #fff;
@@ -150,9 +153,14 @@ section {
     padding-bottom: 16px;
 }
 @media (max-width: 1324px) {
-    #events {
+    #events,
+    #flows  {
         grid-template-columns: repeat(1, 1fr);
     }
+    .block-inner + .block-inner {
+        border-left: none;
+    }
+        
 }
 @media (max-width: 1024px) {
 #offense-inf {
@@ -163,10 +171,11 @@ section {
 }
 }
 @media (max-width: 768px) {
-    #offense-inf {
+    #offense-inf,
+    .grid-columns-4,
+    .grid-columns-6 {
         grid-template-columns: repeat(2, 1fr);
     }
-    
 }
 @media (max-width: 600px) {
     .events-inner {
@@ -185,7 +194,9 @@ section {
 }
 @media (max-width: 480px) {
     #offense-inf,
-    #rules {
+    #rules,
+    .grid-columns-4,
+    .grid-columns-6 {
         grid-template-columns: repeat(1, 1fr);
     }
 }
