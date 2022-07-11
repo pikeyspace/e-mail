@@ -5,157 +5,309 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-mail v.0-1</title>
-    <style>
-        body {
-            background-color: #fff;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-        h2 {
-            color: rgba(0, 0, 0, 0.87);
-            font-size: 20px;
-            font-weight: 500;
-            letter-spacing: 0.15px;
-            line-height: 1.2;
-            padding-left: 16px;
-        }
-        h3 {
-            background-color: #b3cee9;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: .22px;
-            margin: 0;
-            padding: 20px 16px;
-            text-transform: uppercase;
-        }
-        section {
-            min-height: 315px;
-            margin: 16px;
-            padding: 16px;
-            border-radius: 8px;
-            background-color: #e8ecef;
-        }
-        .block {
-            background-color: #fff;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-        }
-        .block-seсtion {
-            width: 100%;
-        }
-        .block-seсtion__content {
-            background-color: #fff;
-            padding: 15px 16px;           
-        }
-        .content-text {
-            line-height: 1.43;
-            letter-spacing: 0.25px;
-            color: rgba(0, 0, 0, 0.87);
-        }
-        .small-block {
-            background-color: #fff;
-            border-radius: 8px;
-            margin-top: 16px;
-            width: 444px;
-        }
-        .small-block:last-child {
-            margin-left: 32px;
-        }
-        .small-block__content {
-            color: rgba(0, 0, 0, 0.87);
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 1.5;
-            letter-spacing: 0.15px;
-            padding-left: 16px;
-        }
-        .small-block__content span {
-            font-weight: 500;
-        }
-        .small-block__content:last-child {
-            padding-bottom: 16px;
-        }
-        @media (max-width: 1024px) {
-            .block {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (max-width: 768px) {
-            .block {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .small-block__warapper {
-                flex-direction: column;
-            }
-            .small-block {
-                width: 100%;
-            }
-            .small-block:last-child {
-                margin-left: 0;
-            }
-        }
-        @media (max-width: 480px) {
-            .block {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <style>
 
     </style>
-</head>
+    <link rel="stylesheet" href="style.css"></head>
 <body>
     <div class="wrapper" style="max-width: 1888px; margin: 0 auto;">
         <section>
-            <h2 style="padding-left: 32px;">QRadar Offense Information:</h2>
-            <div class="block">
+            <h2>QRadar Offense Information:</h3>
+            <div class="block" id="offense-inf">
                 <div class="block-seсtion">
-                    <h3>Offense ID</h3>
+                    <h3 class="block-seсtion__title">Offense ID</h3>
                     <div class="block-seсtion__content">
                         <div class="content-text">369</div>
                     </div>
                 </div>
                 <div class="block-seсtion">
-                    <h3>Offense Name</h3>
+                    <h3 class="block-seсtion__title">Offense Name</h3>
                     <div class="block-seсtion__content">
                         <div class="content-text">Test: Supertest containing Unknown log event</div>
                     </div>
                 </div>
                 <div class="block-seсtion">
-                    <h3>Offense Category</h3>
+                    <h3 class="block-seсtion__title">Offense Category</h3>
                     <div class="block-seсtion__content">
                         <div class="content-text">Unknown Generic Log Event; Access Denied</div>
                     </div>
                 </div>
                 <div class="block-seсtion">
-                    <h3>Start Time</h3>
+                    <h3 class="block-seсtion__title">Start Time</h3>
                     <div class="block-seсtion__content">
                         <div class="content-text">2022-04-05 10:43:27</div>
                     </div>
                 </div>
                 <div class="block-seсtion">
-                    <h3>End Time</h3>
+                    <h3 class="block-seсtion__title">End Time</h3>
                     <div class="block-seсtion__content">
                         <div class="content-text">2022-04-05 10:43:46</div>
                     </div>
                 </div>
                 <div class="block-seсtion">
-                    <h3>Cred/Rel/Sev</h3>
+                    <h3 class="block-seсtion__title">Cred/Rel/Sev</h3>
                     <div class="block-seсtion__content">
                         <div class="content-text">2 / 5 / 5</div>
                     </div>
                 </div>
             </div>
-            <div class="small-block__warapper" style="display: flex; justify-content: space-between; max-width: 920px;">
+            <div class="small-block__warapper" style="display: flex; justify-content: space-between; max-width: 920px; ">
                 <div class="small-block">
-                    <h2>Offense Data:</h2>
+                    <h2>Offense Data:</h3>
                     <div class="small-block__content">Offense Type:&nbsp;<span>Source IP</span></div>
                     <div class="small-block__content">Offense Source:&nbsp;<span>10.11.6.111</span></div>
                 </div>
                 <div class="small-block">
-                    <h2>Offense Data:</h2>
+                    <h2>Offense Data:</h3>
                     <div class="small-block__content">Offense Type:&nbsp;<span>Source IP</span></div>
                     <div class="small-block__content">Offense Source:&nbsp;<span>10.11.6.111</span></div>
                 </div>
             </div>
+        </section>
+        <section>
+            <h2>Rules:</h2>
+            <div class="block" id="rules">
+                <div class="block-seсtion">
+                    <h3 class="block-seсtion__title">Rule Type</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">EVENT</div>
+                    </div>
+                </div>
+                <div class="block-seсtion">
+                    <h3 class="block-seсtion__title">Rule Name</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">Test: Supertest</div>
+                    </div>
+                </div>
+                <div class="block-seсtion">
+                    <h3 class="block-seсtion__title">Rule Description</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">None</div>
+                    </div>
+                </div>
+                <div class="block-seсtion">
+                    <h3 class="block-seсtion__title">Rule Logic</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">When the Event Payload contains supertest</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">
+                <h2 style="margin-right: 20px;">Events</h2> <h3>Total:&nbsp;<span>6</span></h3><h3>Showed:&nbsp;<span>2</span></h3>
+            </div>
+            <div class="block" id="events" style="margin-bottom: 29px;">
+                <div class="block-inner">
+                    <h3 class="block-section__uptitle">Generic Information</h3>
+                    <div class="grid-columns-4 events-inner">
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Application</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">Test</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Protocol	</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Flow Direction</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Last Packet Time</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">EVENT</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="block-inner">
+                    <h3 class="block-section__uptitle">Generic Information</h3>
+                    <div class="grid-columns-4 events-inner">
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Source IP</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">10.11.6.111</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Source Port</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Bytes Sent</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">542</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Packets Sent</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">14563</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+
+                    </div>                
+                </div>
+                <div class="block-inner">
+                    <div class="grid-columns-4 events-inner">
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Destination IP</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">10.11.6.111</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Destination Port</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Bytes Received</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">124561</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Packets Received</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">543156</div>
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+            <div class="section-title">
+                <h2 style="margin-right: 20px;">Flows</h2> <h3>Total:&nbsp;<span>6</span></h3><h3>Showed:&nbsp;<span>2</span></h3>
+            </div>
+            <div class="block grid-columns-12">
+                <div class="block-inner">
+                    <h3 class="block-section__uptitle">Generic Information</h3>
+                    <div class="grid-columns-6">
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Application</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">Test</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Protocol	</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Flow Interface</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Flow Direction</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">First Packet Time</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">EVENT</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Last Packet Time</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">EVENT</div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="block-inner">
+                    <h3 class="block-section__uptitle">Generic Information</h3>
+                    <div class="grid-columns-4">
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Source IP</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">10.11.6.111</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Source Port</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Bytes Sent</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">542</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Packets Sent</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">14563</div>
+                            </div>
+                        </div>
+
+                    </div>                
+                </div>
+                <div class="block-inner">
+                    <h3 class="block-section__uptitle">Generic Information</h3>
+                    <div class="grid-columns-4">
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Destination IP</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">10.11.6.111</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Destination Port</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">N/A</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Bytes Received</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">124561</div>
+                            </div>
+                        </div>
+                        <div class="block-seсtion">
+                            <h3 class="block-seсtion__title-light">Packets Received</h3>
+                            <div class="block-seсtion__content">
+                                <div class="content-text">543156</div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+
+            </div>
+
         </section>
     </div>
 </body>
