@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-mail v.0-1</title>
+    <style>
+        body {
+            background-color: #fff;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        h2 {
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 0.15px;
+            line-height: 1.2;
+            padding-left: 16px;
+        }
+        h3 {
+            background-color: #b3cee9;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: .22px;
+            margin: 0;
+            padding: 20px 16px;
+            text-transform: uppercase;
+        }
+        section {
+            min-height: 315px;
+            margin: 16px;
+            padding: 16px;
+            border-radius: 8px;
+            background-color: #e8ecef;
+        }
+        .block {
+            background-color: #fff;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+        .block-seсtion {
+            width: 100%;
+        }
+        .block-seсtion__content {
+            background-color: #fff;
+            padding: 15px 16px;           
+        }
+        .content-text {
+            line-height: 1.43;
+            letter-spacing: 0.25px;
+            color: rgba(0, 0, 0, 0.87);
+        }
+        .small-block {
+            background-color: #fff;
+            border-radius: 8px;
+            margin-top: 16px;
+            width: 444px;
+        }
+        .small-block:last-child {
+            margin-left: 32px;
+        }
+        .small-block__content {
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: 0.15px;
+            padding-left: 16px;
+        }
+        .small-block__content span {
+            font-weight: 500;
+        }
+        .small-block__content:last-child {
+            padding-bottom: 16px;
+        }
+        @media (max-width: 1024px) {
+            .block {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .block {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .small-block__warapper {
+                flex-direction: column;
+            }
+            .small-block {
+                width: 100%;
+            }
+            .small-block:last-child {
+                margin-left: 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .block {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
 
+    </style>
+</head>
+<body>
+    <div class="wrapper" style="max-width: 1888px; margin: 0 auto;">
+        <section>
+            <h2 style="padding-left: 32px;">QRadar Offense Information:</h2>
+            <div class="block">
+                <div class="block-seсtion">
+                    <h3>Offense ID</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">369</div>
+                    </div>
+                </div>
+                <div class="block-seсtion">
+                    <h3>Offense Name</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">Test: Supertest containing Unknown log event</div>
+                    </div>
+                </div>
+                <div class="block-seсtion">
+                    <h3>Offense Category</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">Unknown Generic Log Event; Access Denied</div>
+                    </div>
+                </div>
+                <div class="block-seсtion">
+                    <h3>Start Time</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">2022-04-05 10:43:27</div>
+                    </div>
+                </div>
+                <div class="block-seсtion">
+                    <h3>End Time</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">2022-04-05 10:43:46</div>
+                    </div>
+                </div>
+                <div class="block-seсtion">
+                    <h3>Cred/Rel/Sev</h3>
+                    <div class="block-seсtion__content">
+                        <div class="content-text">2 / 5 / 5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="small-block__warapper" style="display: flex; justify-content: space-between; max-width: 920px;">
+                <div class="small-block">
+                    <h2>Offense Data:</h2>
+                    <div class="small-block__content">Offense Type:&nbsp;<span>Source IP</span></div>
+                    <div class="small-block__content">Offense Source:&nbsp;<span>10.11.6.111</span></div>
+                </div>
+                <div class="small-block">
+                    <h2>Offense Data:</h2>
+                    <div class="small-block__content">Offense Type:&nbsp;<span>Source IP</span></div>
+                    <div class="small-block__content">Offense Source:&nbsp;<span>10.11.6.111</span></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
