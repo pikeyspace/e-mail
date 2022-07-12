@@ -1,0 +1,176 @@
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
+    <style type="text/css" media="screen">
+        table, th, td {
+          border: 1px solid black;
+          width: auto;
+        }
+       thead {background: #ddd}
+    </style>
+<body bgcolor="#ffffff" style="background: #FFFFFF; -webkit-text-size-adjust:100%%; -ms-text-size-adjust:100%%;
+                               line-height: 15px; font-family: Arial, sans-serif; font-size: 12px; color: #4F4F4F;
+                               margin: 0; padding: 20px; display: block;"
+      marginheight="0" topmargin="0" marginwidth="0" leftmargin="0">
+
+    <!-- Offense data -->
+    <h3>QRadar Offense Information:</h3>
+    <table width="400px" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; font-size: 12px;color: #4F4F4F; ">
+        <thead>
+            <tr>
+                <th style="width:50px">Offense ID</th>
+                <th style="width:550px">Offense Name</th>
+                <th style="width:130px">Offense Category</th>
+                <th style="width:80px">Start Time</th>
+                <th style="width:80px">End Time</th>
+                <th style="width:30px">Cred/Rel/Sev</th>
+            </tr>
+       <thead>
+       <tr bgcolor="#ffffff">
+           <td align="center">${of_id}</td>
+           <td align="left">${of_name}</td>
+           <td align="left">${of_cat}</td>
+           <td align="center">${of_start}</td>
+           <td align="center">${of_end}</td>
+           <td align="center">${of_cred} / ${of_rel} / ${of_sev}</td>
+       </tr>
+    </table>
+    <br>
+
+    <!-- Offense type ans source info -->
+    <b>Offense Type:</b> ${mapper_name}<br>
+    <b>Offense Source:</b> ${src_fixed}<br>
+    <br>
+
+    <!-- Asset info -->
+    <h3>Asset Information:</h3>
+    <b>Given Name:</b> ${as_Given Name}<br>
+    <b>Unified Name:</b> ${as_Unified Name}<br>
+    <br><br>
+
+    <!-- Rules info -->
+    <b>Rules:</b><br>
+    <div align="left">
+        <table width="400px" border="0" cellspacing="0" cellpadding="0"
+               style="font-family: Arial, sans-serif; font-size: 12px;color: #4F4F4F;">
+            <thead>
+                <tr>
+                    <th style="width:70px">Rule Type</th>
+                    <th style="width:150px">Rule Name</th>
+                    <th style="width:250px">Rule Description</th>
+                    <th style="width:700px">Rule Logic</th>
+                </tr>
+            </thead>
+            <!-- All lines between rule_data_template_begin and rule_data_template_end markers will be used as
+                 a template to generate info about rules involved: one copy for each rule -->
+            ${rule_data_template_begin}
+            <tr>
+                <td align="center">${rule_type}</td>
+                <td>${rule_name}</td>
+                <td>${rule_description}</td>
+                <td><i>${rule_logic}</i></td>
+            </tr>
+            ${rule_data_template_end}
+        </table>
+    </div>
+    <br><br>
+
+    <!-- Events and Flow data -->
+    <h3>Events and Flows</h3>
+
+    <!-- Events -->
+    <b>Events: [Total: ${ev_total_count}, Showed: ${ev_showed_count}]</b><br>
+    <div align="left">
+        <table width="400px" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; font-size: 12px;color: #4F4F4F; ">
+            <thead>
+                <tr>
+                    <th colspan="4" style="width:250px">Source</th>
+                    <th colspan="4" style="width:250px">Destination</th>
+                    <th rowspan="2" style="width:100px">Device Name</th>
+                    <th rowspan="2" style="width:70px">Device Time</th>
+                    <th rowspan="2" style="width:600px">Payload</th>
+                    <th rowspan="2" style="width:30px">Event Count</th>
+                </tr>
+                <tr>
+                    <th style="width:100px; background: #ddd">IP</th>
+                    <th style="width:50px; background: #ddd">Port</th>
+                    <th style="width:140px; background: #ddd">Username</th>
+                    <th style="width:60px; background: #ddd">Network</th>
+                    <th style="width:100px; background: #ddd">IP</th>
+                    <th style="width:50px; background: #ddd">Port</th>
+                    <th style="width:140px; background: #ddd">Username<br>(from RefSet)</th>
+                    <th style="width:100px; background: #ddd">Network</th>
+                </tr>
+            </thead>
+            <!-- All lines between ${event_data_template_begin} and ${event_data_template_end} will be used as
+                 a template to generate info about events involved: one copy for each event -->
+            ${event_data_template_begin}
+            <tr>
+                <td align=center>${event_SourceIP}</td>
+                <td align=center>${event_SourcePort}</td>
+                <td align=center>${event_UserName}</td>
+                <td align=center>${event_SourceNetwork}</td>
+                <td align=center>${event_DestinationIP}</td>
+                <td align=center>${event_DestinationPort}</td>
+                <td align=center>${event_DestinationUserName}</td>
+                <td align=center>${event_DestinationNetwork}</td>
+                <td align=center>${event_DeviceName}</td>
+                <td align=center>${event_DeviceTime}</td>
+                <td align=left>${event_Payload}</td>
+                <td align=center>${event_EventCount}</td>
+            </tr>
+            ${event_data_template_end}
+        </table><br>
+
+        <!-- Flow data -->
+        <b>Flows: [Total: ${fl_total_count}, Showed: ${fl_showed_count}]</b>
+        <table width="400px" border="0" cellspacing="0" cellpadding="0"
+               style="font-family: Arial, sans-serif; font-size: 12px;color: #4F4F4F;">
+            <thead>
+                <tr>
+                    <th colspan="6" style="width:600px">Generic Information</th>
+                    <th colspan="4" style="width:260px">Flow Source</th>
+                    <th colspan="4" style="width:260px">Flow Destination</th>
+                </tr>
+                <tr>
+                    <th style="width:250px; background: #ddd">Application</th>
+                    <th style="width:40px; background: #ddd">Protocol</th>
+                    <th style="width:140px; background: #ddd">Flow Interface</th>
+                    <th style="width:40px; background: #ddd">Flow Direction</th>
+                    <th style="width:100px; background: #ddd">First Packet Time</th>
+                    <th style="width:100px; background: #ddd">Last Packet Time</th>
+                    <th style="width:55px; background: #ddd">Source IP</th>
+                    <th style="width:50px; background: #ddd">Source Port</th>
+                    <th style="width:55px; background: #ddd">Bytes Sent</th>
+                    <th style="width:50px; background: #ddd">Packets Sent</th>
+                    <th style="width:55px; background: #ddd">Destination IP</th>
+                    <th style="width:50px; background: #ddd">Destination Port</th>
+                    <th style="width:55px; background: #ddd">Bytes Received</th>
+                    <th style="width:50px; background: #ddd">Packets Received</th>
+                </tr>
+            </thead>
+            <!-- All lines between ${flow_data_template_begin} and ${flow_data_template_end} will be used as
+                 a template to generate info about events involved: one copy for each event -->
+            ${flow_data_template_begin}
+            <tr>
+                <td align=center>${flow_Application}</td>
+                <td align=center>${flow_Protocol}</td>
+                <td align=center>${flow_FlowInterface}</td>
+                <td align=center>${flow_FlowDirection}</td>
+                <td align=center>${flow_FirstPacketTime}</td>
+                <td align=center>${flow_LastPacketTime}</td>
+                <td align=center>${flow_SourceIP}</td>
+                <td align=center>${flow_SourcePort}</td>
+                <td align=center>${flow_SourceBytes}</td>
+                <td align=center>${flow_SourcePackets}</td>
+                <td align=center>${flow_DestinationIP}</td>
+                <td align=center>${flow_DestinationPort}</td>
+                <td align=center>${flow_DestinationBytes}</td>
+                <td align=center>${flow_DestinationPackets}</td>
+            </tr>
+            ${flow_data_template_end}
+        </table>
+    </div><br>
+</body>
+</html>
