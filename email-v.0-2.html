@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email-v.0-2</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<style>
+    html {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+h2 {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    line-height: 1.2;
+    padding-left: 16px;
+}
+h3 {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .22px;
+}
+h3 span {
+    background-color: #025eb8;
+    border-radius: 50%; 
+    color: #fff;
+    margin: 0 16px 0 5px;
+    height: 24px;
+    padding: 7px;
+    width: 24px;
+}
+.wrapper {
+    max-width: 1888px;
+    margin: 0 auto;
+}
+section {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #e8ecef;
+}
+.section-title {
+    display: flex;
+    align-items: center;
+}
+table {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+    text-align: left;
+}
+th,
+td {
+    padding: 15px 0 15px 15px;
+}
+th {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.22px;
+    color: #000000;
+    text-transform: uppercase;
+    background-color: rgba(2, 94, 184, 0.1);
+}
+td {
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.87);
+}
+.small-block {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+    margin-top: 16px;
+    width: 444px;
+}
+.small-block:last-child {
+    margin-left: 32px;
+}
+.small-block__content {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+    padding-left: 16px;
+}
+.small-block__content span {
+    font-weight: 400;
+}
+.small-block__content:last-child {
+    padding-bottom: 16px;
+}
+@media (max-width: 1024px) {
+    section table th{
+        display: none;
+    }
+    section table td {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        border-bottom: 1px solid #e0e0e0;
+   }
+   section table td:last-child{
+        border-bottom: none;
+    }
+   section table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 20px;
+    }
+    section table tr + tr:not(:first-child) {
+        border-top: 3px solid #e0e0e0;
+    }
+    th,
+    td {
+        padding: 15px;
+    }
+}
+@media (max-width: 600px) {
+    .small-block {
+        width: 100%;
+    }
+    .small-block__warapper {
+        flex-direction: column;
+    }
+    .small-block:last-child {
+        margin-left: 0;
+    }
+
+}
+</style>
+<body>
+    <div class="wrapper">
+    <!-- Offense Information -->
+    <section>
+        <h2>QRadar Offense Information:</h2>
+        <table>
+            <thead>
+                <tr style="background-color: rgba(2, 94, 184, 0.3);">
+                    <th style="border-radius: 8px 0 0 0;">Offense ID</th>
+                    <th>Offense Name</th>
+                    <th>Offense Category</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th style="border-radius: 0 8px 0 0 ;">Cred/Rel/Sev</th>
+                </tr>
+            </thead>
+        <tr>
+            <td data-label="Offense ID">369</td>
+            <td data-label="Offense Name">Test: Supertest containing Unknown log event</td>
+            <td data-label="Offense Category">Unknown Generic Log Event; Access Denied</td>
+            <td data-label="Start Time">2022-04-05 10:43:27</td>
+            <td data-label="End Time">2022-04-05 10:43:46</td>
+            <td data-label="Cred/Rel/Sev">2 / 5 / 5</td>
+        </tr>
+        </table>
+
+        <div class="small-block__warapper" style="display: flex; justify-content: space-between; max-width: 920px; ">
+                <!-- Offense Data -->
+            <div class="small-block">
+                <h2>Offense Data:</h2>
+                <div class="small-block__content">Offense Type:&nbsp;<span>Source IP</span></div>
+                <div class="small-block__content">Offense Source:&nbsp;<span>10.11.6.111</span></div>
+            </div>
+                <!-- Asset Information -->
+            <div class="small-block">
+                <h2>Asset Information:</h2>
+                <div class="small-block__content">Given Name:&nbsp;<span>N/A</span></div>
+                <div class="small-block__content">Unified Name:&nbsp;<span>N/A</span></div> 
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!-- Rules Information -->
+        <h2>Rules:</h2>
+            <table>
+                <thead>
+                    <tr style="background-color: rgba(2, 94, 184, 0.3);">
+                        <th style="border-radius: 8px 0 0 0;">Rule Type</th>
+                        <th>Rule Name</th>
+                        <th>Rule Description</th>
+                        <th style="border-radius: 0 8px 0 0;">Rule Logic</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td data-label="Rule Type">EVENT</td>
+                    <td data-label="Rule Name">Test: Supertest</td>
+                    <td data-label="Rule Description">None</td>
+                    <td data-label="Rule Logic">When the Event Payload contains supertest</td>
+                </tr>
+            </table>
+    </section>
+
+    <section>
+        <!-- Events Information-->
+        <div class="section-title">
+            <h2 style="margin-right: 20px;">Events</h2>
+                <h3>Total:&nbsp;<span>06</span></h3>
+                <h3>Showed:&nbsp;<span>02</span></h3>
+        </div>
+        <table style="margin-bottom: 29px;">
+                <thead>
+                    <tr>
+                        <th colspan="4" style="background-color: rgba(2, 94, 184, 0.3); border-radius: 8px 0 0 0;">Source</th>
+                        <th colspan="4" style="background-color: rgba(2, 94, 184, 0.3);">Destination</th>
+                        <th rowspan="2">Device Name</th>
+                        <th rowspan="2">Device Time</th>
+                        <th rowspan="2">Device Time</th>
+                        <th rowspan="2" style="border-radius: 0 8px 0 0;">Event Count</th>
+                    </tr>
+                    <tr>
+                        <th>IP</th>
+                        <th>Port</th>
+                        <th>Username</th>
+                        <th>Network</th>
+                        <th>IP</th>
+                        <th>Port</th>
+                        <th>Username (from RefSet)</th>
+                        <th>Network</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td data-label="IP">10.11.6.111</td>
+                    <td data-label="Port">N/A</td>
+                    <td data-label="Username">N/A</td>
+                    <td data-label="Network">Net_10_0_0_0</td>
+                    <td data-label="IP">10.11.6.111</td>
+                    <td data-label="Port">N/A</td>
+                    <td data-label="Username (from RefSet)">N/A</td>
+                    <td data-label="Network">Net_10_0_0_0</td>
+                    <td data-label="Device Name">Custom Rule Engine-8 :: qradar-113</td>
+                    <td data-label="Device Time">2022-04-05 10:43</td>
+                    <td data-label="Device Time">Test: Supertest __Test: Supertest</td>
+                    <td data-label="Event Count">1</td>
+                </tr>
+                <tr>
+                    <td data-label="IP">10.11.6.111</td>
+                    <td data-label="Port">N/A</td>
+                    <td data-label="Username">N/A</td>
+                    <td data-label="Network">Net_10_0_0_0</td>
+                    <td data-label="IP">10.11.6.111</td>
+                    <td data-label="Port">N/A</td>
+                    <td data-label="Username (from RefSet)">N/A</td>
+                    <td data-label="Network">Net_10_0_0_0</td>
+                    <td data-label="Device Name">Custom Rule Engine-8 :: qradar-113</td>
+                    <td data-label="Device Time">2022-04-05 10:43</td>
+                    <td data-label="Device Time">Test: Supertest __Test: Supertest</td>
+                    <td data-label="Event Count">1</td>
+                </tr>
+        </table>
+            <!-- Flows Information -->
+            <div class="section-title">
+                <h2 style="margin-right: 20px;">Flows</h2>
+                    <h3>Total:&nbsp;<span>06</span></h3>
+                    <h3>Showed:&nbsp;<span>02</span></h3>
+            </div>
+            <table >
+            <thead>
+                <tr style="background-color: rgba(2, 94, 184, 0.3);">
+                    <th colspan="6" style="border-radius: 8px 0 0 0;">Generic Information</th>
+                    <th colspan="4">Flow Source</th>
+                    <th colspan="4" style="border-radius: 0 8px 0 0;">Flow Destination</th>
+                </tr>
+                <tr>
+                    <th>Application</th>
+                    <th>Protocol</th>
+                    <th>Flow Interface</th>
+                    <th>Flow Direction</th>
+                    <th>First Packet Time</th>
+                    <th>Last Packet Time</th>
+                    <th>Source IP</th>
+                    <th>Source Port</th>
+                    <th>Bytes Sent</th>
+                    <th>Packets Sent</th>
+                    <th>Destination IP</th>
+                    <th>Destination Port</th>
+                    <th>Bytes Received</th>
+                    <th>Packets Received</th>
+                </tr>
+            </thead>
+            <tr>
+                <td data-label="Application">Test</td>
+                <td data-label="Protocol">N/A</td>
+                <td data-label="Flow Interface">N/A</td>
+                <td data-label="Flow Direction">N/A</td>
+                <td data-label="First Packet Time">5ms</td>
+                <td data-label="Last Packet Time">15ms</td>
+                <td data-label="Source IP">10.11.6.111</td>
+                <td data-label="Source Port">N/A</td>
+                <td data-label="Bytes Sent">542</td>
+                <td data-label="Packets Sent">14563</td>
+                <td data-label="Destination IP">10.11.6.111</td>
+                <td data-label="Destination Port">N/A</td>
+                <td data-label="Bytes Received">124561</td>
+                <td data-label="Packets Received">543156</td>
+            </tr>
+            <tr>
+                <td data-label="Application">Test</td>
+                <td data-label="Protocol">N/A</td>
+                <td data-label="Flow Interface">N/A</td>
+                <td data-label="Flow Direction">N/A</td>
+                <td data-label="First Packet Time">5ms</td>
+                <td data-label="Last Packet Time">15ms</td>
+                <td data-label="Source IP">10.11.6.111</td>
+                <td data-label="Source Port">N/A</td>
+                <td data-label="Bytes Sent">542</td>
+                <td data-label="Packets Sent">14563</td>
+                <td data-label="Destination IP">10.11.6.111</td>
+                <td data-label="Destination Port">N/A</td>
+                <td data-label="Bytes Received">124561</td>
+                <td data-label="Packets Received">543156</td>
+            </tr>
+            <tr>
+                <td data-label="Application">Test</td>
+                <td data-label="Protocol">N/A</td>
+                <td data-label="Flow Interface">N/A</td>
+                <td data-label="Flow Direction">N/A</td>
+                <td data-label="First Packet Time">5ms</td>
+                <td data-label="Last Packet Time">15ms</td>
+                <td data-label="Source IP">10.11.6.111</td>
+                <td data-label="Source Port">N/A</td>
+                <td data-label="Bytes Sent">542</td>
+                <td data-label="Packets Sent">14563</td>
+                <td data-label="Destination IP">10.11.6.111</td>
+                <td data-label="Destination Port">N/A</td>
+                <td data-label="Bytes Received">124561</td>
+                <td data-label="Packets Received">543156</td>
+            </tr>
+        </table>
+    </section>
+</div>
+</body>
+</html>
